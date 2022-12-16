@@ -1,12 +1,17 @@
 package com.ltp.globalsuperstore;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+@Service
 public class StoreService {
 
-    StoreRepository storeRepository = new StoreRepository();
+    @Autowired
+    StoreRepository storeRepository;
     
     public Item getItem(int index) {
         return storeRepository.getItem(index);
